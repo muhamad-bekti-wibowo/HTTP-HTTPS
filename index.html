@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Asal asalan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 96vh;
+            flex-direction: column;
+        }
+
+        .body {
+            display: flex;
+            width: 400px;
+            background-color: rgb(255, 255, 255);
+        }
+        .name{
+            width: 200px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Website akses publik nomor antrian obat </div>
+    <div>Rumah Sakit Umum Daerah</div>
+    <div class="body">
+        <table>
+            <tr>
+                <th class="name">Racikan </th>
+                <th class="name">Non Racikan</th>
+            </tr>
+            <tr>
+                <td class="name">R <span class="R"></span></td>
+                <td class="name">N <span class="N"></span></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        let link ="https://script.google.com/macros/s/AKfycbwz-P9lVitfQ4T8OMY8bEcGOSfkBeM-RW3vtUulB2JESJgC2s6241BcnfPsd5PQSnbznw/exec?read";
+         $.get(link, function(data, status){
+            const myArray = data.split(",");
+            $(".R").text(myArray[0]);
+            $(".N").text(myArray[1]);
+  });
+    </script>
+</body>
+
+</html>
